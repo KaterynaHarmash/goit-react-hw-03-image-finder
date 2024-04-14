@@ -3,10 +3,6 @@ import axios from 'axios';
 const BASEURL = 'https://pixabay.com/api/';
 const APIKEY = '8561427-28425017e1b4cf528f7525243';
 export class ImagesAPI {
-  constructor() {
-    (this.query = ''), (this.page = 1), (this.images = []);
-  }
-
   async fetchImages() {
     try {
       const response = await axios.get(
