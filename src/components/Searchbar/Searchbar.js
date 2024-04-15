@@ -7,7 +7,7 @@ export const SearchBar = ({ onSubmit }) => {
         initialValues={{
           query: '',
         }}
-        onSubmit={(values, actions) => {
+        onSubmit={values => {
           onSubmit(values.query);
         }}
       >

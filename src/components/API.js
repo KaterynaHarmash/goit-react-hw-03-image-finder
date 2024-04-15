@@ -11,6 +11,7 @@ export const fetchimages = async (q, page) => {
     safesearch: 'true',
     per_page: 40,
     page: page,
+    order: 'latest',
   };
   const responce = await axios.get();
   return responce.data;
