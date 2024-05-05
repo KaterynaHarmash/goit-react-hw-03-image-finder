@@ -4,13 +4,7 @@ import { fetchimages } from './API';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Button } from './Button/Button';
 import { ThreeDots } from 'react-loader-spinner';
-import * as basicLightbox from 'basiclightbox';
 import toast, { Toaster } from 'react-hot-toast';
-
-const content = document.createElement('div');
-const img = document.createElement('img');
-content.appendChild(img);
-const instance = basicLightbox.create(content, { closable: true });
 
 export class App extends Component {
   state = {
@@ -45,11 +39,7 @@ export class App extends Component {
       }
     }
   }
-  onImageClick = (evt, largeImageURL) => {
-    img.src = largeImageURL;
-    img.alt = evt.target.alt;
-    instance.show();
-  };
+  onImageClick = (evt, largeImageURL) => {};
   onLoadMore = async () => {
     this.setState(prevState => ({
       requestData: {
@@ -74,9 +64,7 @@ export class App extends Component {
         <Toaster />
         <SearchBar onSubmit={this.onSubmit} />
         <div className="main">
-          {images.length !== 0 && (
-            <ImageGallery images={images} onImageClick={this.onImageClick} />
-          )}
+          {images.length !== 0 && <ImageGallery images={images} />}
           {onLoading === true && (
             <ThreeDots
               visible={true}
