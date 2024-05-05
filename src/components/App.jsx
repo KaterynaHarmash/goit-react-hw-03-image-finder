@@ -16,7 +16,7 @@ export class App extends Component {
     onLoading: false,
     loadbtnClickableStatus: true,
   };
-  // Подумати як обійти що при запиті + сторінка 1 при оновленому запиті неможливо зробити фетч, бо номер сторінки не змінився
+
   async componentDidUpdate(prevProps, prevState) {
     if (prevState.requestData !== this.state.requestData) {
       this.setState({ onLoading: true });
